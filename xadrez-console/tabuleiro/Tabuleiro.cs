@@ -36,6 +36,17 @@
             pecas[pos.linha,pos.coluna] = p; //Controle do objeto (no programa principal nos testes chamado de 'tab') para acossiar uma peça a uma posição
             p.posicao = pos; //Atualiza a posição que a peça p está (começa com o valor null) para a própria peça
         }
+        public Peca retirarPeca(Posicao pos)
+        {
+            if (peca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha,pos.coluna] = null; // Marca a posição onde ela estava no tabuleiro como nula
+            return aux;
+        }
         public bool posicaoValida(Posicao pos) // Verifica se dada posição é válida
         {
             if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
