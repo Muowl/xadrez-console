@@ -29,7 +29,7 @@
         }
         public void colocarPeca(Peca p, Posicao pos)
         {
-            if (existePeca(pos))
+            if (existePeca(pos) && peca(pos).cor == p.cor)
             {
                 throw new TabuleiroException("Já existe uma peça nessa posição!"); // Dessa forma testamos se a posição é válida e se já existe uma peça nessa posição
             }
